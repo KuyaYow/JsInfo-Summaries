@@ -31,11 +31,38 @@ span:hover {
 .SideBar span:hover {
   color: #e3796a;
 }
+.SideBar2 {
+  float: right;
+  width: 244px;
+  position: relative;
+  height: 120px;
+  overflow: auto;
+  background-color: #292c31;
+  border-radius: 14px;
+  display: none;
+}
+.SideBar2 span {
+  display: block;
+  color: #e2e3e7;
+  padding: 18px;
+  text-decoration: none;
+  font-size: large;
+}
+.SideBar2 span:hover {
+  color: #e3796a;
+}
+
 .Banner {
-  width: 495px;
+  width: 100%;
+}
+.Banner2 {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  height: 51px;
+  float: right;
 }
 .credits {
-  float: right;
   background-color: #292c31;
   color: #e3796a;
   padding: 14px;
@@ -48,6 +75,10 @@ span:hover {
   color: #d2483e;
   cursor: pointer;
   text-decoration: underline;
+}
+.searchbar {
+  float: left;
+  width: fit-content;
 }
 .searchInput {
   background-color: #232529;
@@ -77,7 +108,7 @@ span:hover {
   width: 69%;
 }
 .list {
-  margin-top: 5%;
+  margin-top: 90px;
 }
 details summary {
   color: #849fee;
@@ -140,6 +171,7 @@ a {
   padding: 7px;
   border: #35383f 1px solid;
 }
+/* www.textfixer.com */
 /* provide some minimal visual accomodation for IE8 and below */
 .TFtable tr {
   background: #292c31;
@@ -152,6 +184,7 @@ a {
 .TFtable tr:nth-child(even) {
   background: #292c31;
 }
+/* End of www.textfixer.com */
 .notAvailable {
   padding-left: 114px;
   font-size: larger;

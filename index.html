@@ -12,30 +12,60 @@
     ></script>
     <script src="JsInfoSummaries.js"></script>
     <link rel="stylesheet" type="text/css" href="JsInfoSummaries.css" />
-    <!-- !End of important links -->
+    <!-- !Important responsive css -->
     <style>
-      @media screen and (max-width: 682px) {
+      @media screen and (max-width: 1194px) {
+        .searchInput {
+          width: 205px;
+        }
+      }
+      @media screen and (max-width: 1069px) {
+        .Banner2 {
+          float: none;
+          margin-top: 72px;
+        }
+        .list {
+          margin-top: 25px;
+        }
+      }
+      @media screen and (max-width: 999px) {
         .content {
           margin-left: 0%;
-        }
-        .searchInput {
-          width: 200px;
-        }
-      }
-      @media screen and (max-width: 464px) {
-        .searchInput {
-          width: 180px;
-        }
-      }
-      @media screen and (max-width: 424px) {
-        .content {
           width: 100%;
+        }
+        .list {
+          margin-top: 51px;
+        }
+        .Banner2 {
+          margin-top: 82px;
+        }
+        .searchbar {
+          margin-top: 8px;
         }
         .SideBar {
           display: none;
         }
+        .SideBar2 {
+          display: block;
+        }
+      }
+      @media screen and (max-width: 581px) {
+        .SideBar2 {
+          width: 144px;
+        }
+      }
+      @media screen and (max-width: 494px) {
+        .Banner {
+          font-size: small;
+        }
+      }
+      @media screen and (max-width: 483px) {
         .searchInput {
-          width: 200px;
+          width: 151px;
+        }
+        .credits {
+          font-size: small;
+          width: fit-content;
         }
       }
     </style>
@@ -57,10 +87,16 @@
       <div class="Banner">
         <h1>The Modern JavaScript Tutorial:<br />Summarized</h1>
       </div>
-      <div class="Banner2">
-        <a href="https://github.com/iliakan" class="credits" target="_blank"
-          >Credits to the man himself Ilya Kantor</a
-        >
+      <div class="SideBar2">
+        <center>
+          <span onclick="myContact()">
+            Contact  <i class="fa-solid fa-address-book" aria-hidden="true"></i>
+          </span>
+
+          <span onclick="about()">
+            About    <i class="fa fa-info-circle" aria-hidden="true"></i>
+          </span>
+        </center>
       </div>
       <!-- searchbar -->
       <div class="searchbar">
@@ -68,9 +104,14 @@
           class="searchInput"
           type="search"
           name="query"
-          placeholder=" Search in compendium"
+          placeholder=" Find or Search topics"
         />
         <button class="searchBttn">Search</button>
+      </div>
+      <div class="Banner2">
+        <a href="https://github.com/iliakan" class="credits" target="_blank"
+          >Credits to the man himself Ilya Kantor</a
+        >
       </div>
       <!-- start of compendium -->
       <div class="list">
@@ -1215,6 +1256,213 @@ It’s used to assign default values to variables:
                 arrow function, it is taken from outside.
               </p>
               <a href="https://javascript.info/object-methods" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Constructor, operator "new"</summary>
+              <ul>
+                <li>
+                  Constructor functions or, briefly, constructors, are regular
+                  functions, but there’s a common agreement to name them with
+                  capital letter first.
+                </li>
+                <li>
+                  Constructor functions should only be called using
+                  <code>new</code>. Such a call implies a creation of empty
+                  <code>this</code> at the start and returning the populated one
+                  at the end.
+                </li>
+              </ul>
+              <p>
+                We can use constructor functions to make multiple similar
+                objects.
+              </p>
+              <p>
+                JavaScript provides constructor functions for many built-in
+                language objects: like <code>Date</code> for dates,
+                <code>Set</code> for sets and others that we plan to study.
+              </p>
+              <a href="https://javascript.info/constructor-new" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Optional chaining '?.'</summary>
+              <p>
+                The optional chaining <code>?.</code> syntax has three forms:
+              </p>
+              <ol>
+                <li>
+                  <code>obj?.prop</code> – returns <code>obj.prop</code> if
+                  <code>obj</code> exists, otherwise <code>undefined</code>.
+                </li>
+                <li>
+                  <code>obj?.[prop]</code> – returns <code>obj[prop]</code> if
+                  <code>obj</code> exists, otherwise <code>undefined</code>.
+                </li>
+                <li>
+                  <code>obj.method?.()</code> – calls
+                  <code>obj.method()</code> if <code>obj.method</code> exists,
+                  otherwise returns <code>undefined</code>.
+                </li>
+              </ol>
+              <p>
+                As we can see, all of them are straightforward and simple to
+                use. The <code>?.</code> checks the left part for
+                <code>null/undefined</code> and allows the evaluation to proceed
+                if it’s not so.
+              </p>
+              <p>
+                A chain of <code>?.</code> allows to safely access nested
+                properties.
+              </p>
+              <p>
+                Still, we should apply <code>?.</code> carefully, only where
+                it’s acceptable, according to our code logic, that the left part
+                doesn’t exist. So that it won’t hide programming errors from us,
+                if they occur.
+              </p>
+              <a
+                href="https://javascript.info/optional-chaining"
+                target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Symbol type</summary>
+              <p>
+                <code>Symbol</code> is a primitive type for unique identifiers.
+              </p>
+              <p>
+                Symbols are created with <code>Symbol()</code> call with an
+                optional description (name).
+              </p>
+              <p>
+                Symbols are always different values, even if they have the same
+                name. If we want same-named symbols to be equal, then we should
+                use the global registry: <code>Symbol.for(key)</code> returns
+                (creates if needed) a global symbol with <code>key</code> as the
+                name. Multiple calls of <code>Symbol.for</code> with the same
+                <code>key</code> return exactly the same symbol.
+              </p>
+              <p>Symbols have two main use cases:</p>
+              <ol>
+                <li>
+                  <p>“Hidden” object properties.</p>
+                  <p>
+                    If we want to add a property into an object that “belongs”
+                    to another script or a library, we can create a symbol and
+                    use it as a property key. A symbolic property does not
+                    appear in <code>for..in</code>, so it won’t be accidentally
+                    processed together with other properties. Also it won’t be
+                    accessed directly, because another script does not have our
+                    symbol. So the property will be protected from accidental
+                    use or overwrite.
+                  </p>
+                  <p>
+                    So we can “covertly” hide something into objects that we
+                    need, but others should not see, using symbolic properties.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    There are many system symbols used by JavaScript which are
+                    accessible as <code>Symbol.*</code>. We can use them to
+                    alter some built-in behaviors. For instance, later in the
+                    tutorial we’ll use <code>Symbol.iterator</code> for
+                    <a href="/iterable">iterables</a>,
+                    <code>Symbol.toPrimitive</code> to setup
+                    <a href="/object-toprimitive"
+                      >object-to-primitive conversion</a
+                    >
+                    and so on.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Technically, symbols are not 100% hidden. There is a built-in
+                method
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols"
+                  >Object.getOwnPropertySymbols(obj)</a
+                >
+                that allows us to get all symbols. Also there is a method named
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys"
+                  >Reflect.ownKeys(obj)</a
+                >
+                that returns <em>all</em> keys of an object including symbolic
+                ones. But most libraries, built-in functions and syntax
+                constructs don’t use these methods.
+              </p>
+              <a href="https://javascript.info/symbol" target="_blank">Full</a>
+              <hr />
+            </details>
+            <details>
+              <summary>Object to primitive conversion</summary>
+              <p>
+                The object-to-primitive conversion is called automatically by
+                many built-in functions and operators that expect a primitive as
+                a value.
+              </p>
+              <p>There are 3 types (hints) of it:</p>
+              <ul>
+                <li>
+                  <code>"string"</code> (for <code>alert</code> and other
+                  operations that need a string)
+                </li>
+                <li><code>"number"</code> (for maths)</li>
+                <li>
+                  <code>"default"</code> (few operators, usually objects
+                  implement it the same way as <code>"number"</code>)
+                </li>
+              </ul>
+              <p>
+                The specification describes explicitly which operator uses which
+                hint.
+              </p>
+              <p>The conversion algorithm is:</p>
+              <ol>
+                <li>
+                  Call <code>obj[Symbol.toPrimitive](hint)</code> if the method
+                  exists,
+                </li>
+                <li>
+                  Otherwise if hint is <code>"string"</code>
+                  <ul>
+                    <li>
+                      try calling <code>obj.toString()</code> or
+                      <code>obj.valueOf()</code>, whatever exists.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Otherwise if hint is <code>"number"</code> or
+                  <code>"default"</code>
+                  <ul>
+                    <li>
+                      try calling <code>obj.valueOf()</code> or
+                      <code>obj.toString()</code>, whatever exists.
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+              <p>
+                All these methods must return a primitive to work (if defined).
+              </p>
+              <p>
+                In practice, it’s often enough to implement only
+                <code>obj.toString()</code> as a “catch-all” method for string
+                conversions that should return a “human-readable” representation
+                of an object, for logging or debugging purposes.
+              </p>
+              <a
+                href="https://javascript.info/object-toprimitive"
+                target="_blank"
                 >Full</a
               >
               <hr />
