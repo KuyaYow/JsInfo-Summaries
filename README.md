@@ -1,4 +1,4 @@
 # JsInfoSummaries.github.io
-!Unfinished!
-Minimum width 424px
+!Unfinished! <br>
+Minimum width 424px <br>
 Credits to Ilya Kantor
