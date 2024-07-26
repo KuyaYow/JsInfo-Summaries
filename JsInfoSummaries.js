@@ -1,7 +1,7 @@
 "use strict";
 function myContact() {
   alert(
-    "Contact no. (+63) 995 028 9948 \nEmail address: Yuansabellina@gmail.com"
+    "Contact no. (+63) 995 028 9948 \nEmail address: Yuansabellina@gmail.com \nGithub: @KuyaYow"
   );
 }
 function about() {
