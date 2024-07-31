@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript.Info Summaries</title>
+    <!--!Important links -->
+    <link rel="icon" type="image/x-icon" href="JsInfo.ico" />
+    <script
+      src="https://kit.fontawesome.com/6b87b49efc.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- !Important responsive css -->
+    <style>
+      body {
+        background-color: #232529;
+        color: #e2e3e7;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      span {
+        color: #849fee;
+        cursor: pointer;
+        user-select: none;
+      }
+      span:hover {
+        color: #e3796a;
+      }
+      .SideBar {
+        right: 1%;
+        padding: 0;
+        width: 114px;
+        position: fixed;
+        height: 114px;
+        overflow: auto;
+        border: thin solid #292c31;
+        background-color: #292c31;
+        border-radius: 14px;
+      }
+      .SideBar span {
+        display: block;
+        color: #e2e3e7;
+        padding: 16px;
+        text-decoration: none;
+      }
+      .SideBar span:hover {
+        color: #e3796a;
+      }
+      .SideBar2 {
+        float: right;
+        width: 244px;
+        position: relative;
+        height: 120px;
+        overflow: auto;
+        background-color: #292c31;
+        border-radius: 14px;
+        display: none;
+      }
+      .SideBar2 span {
+        display: block;
+        color: #e2e3e7;
+        padding: 18px;
+        text-decoration: none;
+        font-size: large;
+      }
+      .SideBar2 span:hover {
+        color: #e3796a;
+      }
+
+      .Banner {
+        width: 100%;
+      }
+      .Banner2 {
+        position: relative;
+        display: flex;
+        width: fit-content;
+        height: 51px;
+        float: right;
+      }
+      .credits {
+        background-color: #292c31;
+        color: #e3796a;
+        padding: 14px;
+        border-radius: 6px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .credits:hover {
+        background-color: #35383f;
+        color: #d2483e;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .searchbar {
+        float: left;
+        width: fit-content;
+      }
+      .searchInput {
+        background-color: #232529;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        border: thin solid lightgray;
+        width: 350px;
+        height: 41px;
+      }
+      .searchBttn {
+        height: 42px;
+        width: 105px;
+        background-color: #448460;
+        color: #232529;
+        font-weight: bolder;
+        font-size: large;
+        border: thin solid #448460;
+        border-radius: 3px;
+      }
+      .searchBttn:hover {
+        background-color: #67b689;
+        color: #232529;
+        border: thin solid #67b689;
+      }
+      .content {
+        margin-left: 14%;
+        width: 69%;
+      }
+      .list {
+        margin-top: 90px;
+      }
+      details summary {
+        color: #849fee;
+        padding: 5px;
+        background-color: #232529;
+      }
+      details summary:hover {
+        color: #e3796a;
+        background-color: #2a2d31;
+        text-decoration: underline;
+        cursor: pointer;
+        user-select: none;
+      }
+      ul li {
+        margin: 10px;
+        line-height: 1.5em;
+        font-size: larger;
+      }
+      ol li {
+        margin: 10px;
+        line-height: 1.5em;
+        font-size: larger;
+      }
+      dl dt,
+      dd {
+        font-size: larger;
+      }
+      p {
+        margin: 10px;
+        line-height: 1.5em;
+        font-size: larger;
+      }
+      code {
+        background-color: #282a36;
+        color: #868d9a;
+        padding: 4px;
+      }
+      pre {
+        font-size: 17px;
+      }
+      #varLink {
+        color: #849fee;
+        text-decoration: none;
+      }
+      #varLink:hover {
+        color: #e3796a;
+        text-decoration: underline;
+      }
+      a {
+        color: #849fee;
+      }
+      .shortcut {
+        border: thin solid #e2e3e7;
+      }
+      .TFtable {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .TFtable td {
+        padding: 7px;
+        border: #35383f 1px solid;
+      }
+      /* www.textfixer.com */
+      /* provide some minimal visual accomodation for IE8 and below */
+      .TFtable tr {
+        background: #292c31;
+      }
+      /*  Define the background color for all the ODD background rows  */
+      .TFtable tr:nth-child(odd) {
+        background: #232529;
+      }
+      /*  Define the background color for all the EVEN background rows  */
+      .TFtable tr:nth-child(even) {
+        background: #292c31;
+      }
+      /* End of www.textfixer.com */
+      .notAvailable {
+        padding-left: 114px;
+        font-size: larger;
+      }
+      .spacer {
+        height: 20px;
+      }
+      @media screen and (max-width: 1194px) {
+        .searchInput {
+          width: 205px;
+        }
+      }
+      @media screen and (max-width: 1069px) {
+        .Banner2 {
+          float: none;
+          margin-top: 72px;
+        }
+        .list {
+          margin-top: 25px;
+        }
+      }
+      @media screen and (max-width: 999px) {
+        .content {
+          margin-left: 0%;
+          width: 100%;
+        }
+        .list {
+          margin-top: 51px;
+        }
+        .Banner2 {
+          margin-top: 82px;
+        }
+        .searchbar {
+          margin-top: 8px;
+        }
+        .SideBar {
+          display: none;
+        }
+        .SideBar2 {
+          display: block;
+        }
+      }
+      @media screen and (max-width: 581px) {
+        .SideBar2 {
+          width: 144px;
+        }
+      }
+      @media screen and (max-width: 494px) {
+        .Banner {
+          font-size: small;
+        }
+      }
+      @media screen and (max-width: 483px) {
+        .searchInput {
+          width: 151px;
+        }
+        .credits {
+          font-size: small;
+          width: fit-content;
+        }
+      }
+      @media screen and (max-width: 420px) {
+        .searchInput {
+          width: 80px;
+        }
+        .Banner2 {
+          width: 190px;
+        }
+        .SideBar2 {
+          width: 126px;
+        }
+      }
+      @media screen and (max-width: 405px) {
+        .Banner {
+          font-size: x-small;
+        }
+      }
+      @media screen and (max-width: 332px) {
+        .searchBttn {
+          width: 80px;
+        }
+        .Banner2 {
+          width: 160px;
+        }
+      }
+      @media screen and (max-width: 315px) {
+        .Banner {
+          font-size: xx-small;
+        }
+      }
+    </style>
+    <!-- toDO: Add more Summaries etc. -->
+    <!-- toDO: Make page more responsive -->
+    <!-- toDO: Find and/or fix bugs/problems -->
+  </head>
+  <body>
+    <!-- sidebar -->
+    <div class="SideBar">
+      <span onclick="myContact()">
+        Contact  <i class="fa-solid fa-address-book" aria-hidden="true"></i>
+      </span>
+
+      <span onclick="about()">
+        About     <i class="fa fa-info-circle" aria-hidden="true"></i>
+      </span>
+    </div>
+    <!-- content -->
+    <div class="content">
+      <!-- Banner -->
+      <div class="Banner">
+        <h1>The Modern JavaScript Tutorial:<br />Summarized</h1>
+      </div>
+      <div class="SideBar2">
+        <center>
+          <span onclick="myContact()">
+            Contact  <i class="fa-solid fa-address-book" aria-hidden="true"></i>
+          </span>
+
+          <span onclick="about()">
+            About    <i class="fa fa-info-circle" aria-hidden="true"></i>
+          </span>
+        </center>
+      </div>
+      <!-- searchbar -->
+      <div class="searchbar">
+        <input
+          class="searchInput"
+          type="search"
+          name="query"
+          placeholder=" Find or Search topics"
+        />
+        <button class="searchBttn">Search</button>
+      </div>
+      <div class="Banner2">
+        <a href="https://github.com/iliakan" class="credits" target="_blank"
+          >Credits to the man himself Ilya Kantor</a
+        >
+      </div>
+      <!-- start of compendium -->
+      <div class="list">
+        <hr class="Yeahwr" />
+        <div class="list-Item">
+          <div class="list-Title">
+            <h2>An Introduction</h2>
+          </div>
+          <div class="list-Sub">
+            <details>
+              <summary>An introduction to JavaScript</summary>
+              <ul>
+                <li>
+                  JavaScript was initially created as a browser-only language,
+                  but it is now used in lots of other environments as well.
+                </li>
+                <li>
+                  Today, JavaScript has a unique position as the most
+                  widely-adopted browser language, fully integrated with
+                  HTML/CSS.
+                </li>
+                <li>
+                  There are many languages that get “transpiled” to JavaScript
+                  and provide certain features. It is recommended to take a look
+                  at them, at least briefly, after mastering JavaScript.
+                </li>
+              </ul>
+              <a href="https://javascript.info/intro" target="_blank">Full</a>
+              <hr />
+            </details>
+            <details>
+              <summary>Manuals and specifications</summary>
+              <ul>
+                <li>
+                  ECMAScript Specifications: Define JavaScript's syntax,
+                  behavior, and core features.
+                </li>
+                <li>
+                  MDN Web Docs: Comprehensive documentation on J.S. features,
+                  APIs, and browser compatibility.
+                </li>
+                <li>
+                  Browser-Specific Documentation: Details on JavaScript
+                  implementations in different browsers.
+                </li>
+                <li>
+                  Compatibility Tables: Compare JavaScript features across
+                  ECMAScript versions and browsers.
+                </li>
+                <li>
+                  Learning Resources: Guides and tutorials for developers to
+                  learn and apply JavaScript effectively.
+                </li>
+              </ul>
+              <p>
+                Overall: JavaScript manuals and specifications provide standards
+                for language syntax, behavior, and features, including
+                ECMAScript specs, MDN Web Docs, browser-specific details,
+                compatibility tables, and learning resources.
+              </p>
+              <a
+                href="https://javascript.info/manuals-specifications"
+                target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Code Editors</summary>
+              <ul>
+                <li>
+                  Code editors in JavaScript are software tools for writing and
+                  editing code. They offer features like syntax highlighting,
+                  autocomplete, and debugging tools to help developers write
+                  code efficiently.
+                </li>
+                <li>
+                  Popular examples include Visual Studio Code, Sublime Text,
+                  Atom, and WebStorm, each catering to different needs and
+                  preferences in software development.
+                </li>
+              </ul>
+              <a href="https://javascript.info/code-editors" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Developer console</summary>
+              <ul>
+                <li>
+                  The developer console is a browser's built-in JavaScript
+                  console that allows developers to test, debug, and inspect
+                  code in real-time. It provides features like autocomplete,
+                  error messages, and stack trace navigation.
+                </li>
+                <li>
+                  It is useful for developers to log messages, test code, and
+                  troubleshoot issues in their browser-based applications.
+                </li>
+                <li>
+                  Developer tools allow us to see errors, run commands, examine
+                  variables, and much more.
+                </li>
+                <li>
+                  The developer console is essential for learning JavaScript,
+                  debugging, and testing code.
+                </li>
+                <li>
+                  They can be opened with F12 for most browsers on Windows.
+                  Chrome for Mac needs Cmd+Opt+J, Safari: Cmd+Opt+C (need to
+                  enable first).
+                </li>
+              </ul>
+              <a href="https://javascript.info/devtools" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+          </div>
+        </div>
+        <div class="list-Item">
+          <div class="list-Title">
+            <h2>Javascript Fundamentals</h2>
+          </div>
+          <div class="list-Sub">
+            <details>
+              <summary>Hello, world!</summary>
+              <ul>
+                <li>
+                  We can use a <code>&lt;script&gt;</code> tag to add JavaScript
+                  code to a page.
+                </li>
+                <li>
+                  The
+                  <code>type</code>
+                  and
+                  <code>language</code>
+                  attributes are not required.
+                </li>
+                <li>
+                  A script in an external file can be inserted with
+                  <code
+                    >&lt;script src="path/to/script.js"&gt;&lt;/script&gt;</code
+                  >.
+                </li>
+              </ul>
+              <p>
+                There is much more to learn about browser scripts and their
+                interaction with the webpage. But let’s keep in mind that this
+                part of the tutorial is devoted to the JavaScript language, so
+                we shouldn’t distract ourselves with browser-specific
+                implementations of it. We’ll be using the browser as a way to
+                run JavaScript, which is very convenient for online reading, but
+                only one of many.
+              </p>
+              <a href="https://javascript.info/hello-world" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+          </div>
+          <details>
+            <summary>Code Structure</summary>
+            <ul>
+              <li>
+                Statements are instructions executed by the browser. They are
+                usually written on a single line but can span multiple lines.
+              </li>
+              <li>
+                Semicolons separate statements. While JavaScript can
+                automatically insert them, it's best to use them explicitly to
+                avoid issues.
+              </li>
+              <li>
+                Comments explain the code and are ignored by the engine. Use
+                <code>// ...</code> for single-line comments and <br />
+                <code>/* ... */</code> for multi-line comments.
+              </li>
+              <li>
+                Blocks group statements using curly braces <code>{}</code>.
+                You'll commonly see these in functions, loops, and conditionals.
+              </li>
+              <li>
+                Whitespace, such as spaces, tabs, and newlines, is mostly
+                ignored, allowing for flexible formatting.
+              </li>
+            </ul>
+            <a href="https://javascript.info/structure" target="_blank">Full</a>
+            <hr />
+          </details>
+          <details>
+            <summary>The modern mode, "use strict"</summary>
+            <ul>
+              <li>
+                <code>'use strict';</code> enables a strict mode to catch common
+                coding errors and unsafe actions.
+              </li>
+              <li>
+                By default, code executed in the browser console is not in
+                strict mode.
+              </li>
+              <li>
+                It is recommended to use strict mode in all scripts to help
+                catch coding mistakes early and ensure safer, cleaner code.
+              </li>
+            </ul>
+            <a href="https://javascript.info/strict-mode" target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+          <details>
+            <summary>Variables</summary>
+            <p>
+              We can declare variables to store data by using the
+              <code>var</code>,<code>let</code>, or <code>const</code> keywords.
+            </p>
+            <ul>
+              <li><code>let</code> – is a modern variable declaration.</li>
+              <li>
+                <code>var</code> – is an old-school variable declaration.
+                Normally we don’t use it at all, but we’ll cover subtle
+                differences from <code>let</code> in the chapter
+                <a id="varLink" href="#oldVar">The old "var"</a>, just in case
+                you need them.
+              </li>
+              <li>
+                <code>const</code> – is like <code>let</code>, but the value of
+                the variable can’t be changed.
+              </li>
+            </ul>
+            <p>
+              Variables should be named in a way that allows us to easily
+              understand what’s inside them.
+            </p>
+            <a href="https://javascript.info/variables" target="_blank">Full</a>
+            <hr />
+          </details>
+          <details>
+            <summary>Data Types</summary>
+            <p>There are 8 basic data types in JavaScript.</p>
+            <p style="font-weight: bolder; color: white">
+              Seven primitive data types:
+            </p>
+            <ul>
+              <li>
+                <code>number</code> for numbers of any kind: integer or
+                floating-point, integers are limited by <code>±(253-1)</code>.
+              </li>
+              <li>
+                <code>bigint</code> for integer numbers of arbitrary length.
+              </li>
+              <li>
+                <code>string</code> for strings. A string may have zero or more
+                characters, there’s no separate single-character type.
+              </li>
+              <li>
+                <code>boolean</code> for <code>true</code>/<code>false</code>.
+              </li>
+              <li>
+                <code>null</code> for unknown values – a standalone type that
+                has a single value <code>null</code>.
+              </li>
+              <li>
+                <code>undefined</code> for unassigned values – a standalone type
+                that has a single value <code>undefined</code>.
+              </li>
+              <li><code>symbol</code> for unique identifiers.</li>
+            </ul>
+            <p style="font-weight: bolder; color: white">
+              And one non-primitive data type:
+            </p>
+            <ul>
+              <li><code>object</code> for more complex data structures.</li>
+            </ul>
+            <p>
+              The <code>typeof</code> operator allows us to see which type is
+              stored in a variable.
+            </p>
+            <ul>
+              <li>
+                Usually used as <code>typeof x</code>, but
+                <code>typeof(x)</code> is also possible.
+              </li>
+              <li>
+                Returns a string with the name of the type, like
+                <code>"string"</code>.
+              </li>
+              <li>
+                For <code>null</code> returns <code>"object"</code> – this is an
+                error in the language, it’s not actually an object.
+              </li>
+            </ul>
+            <a href="https://javascript.info/types" target="_blank">Full</a>
+            <hr />
+          </details>
+          <details>
+            <summary>Interaction: alert, prompt, confirm</summary>
+            <p>
+              We covered 3 browser-specific functions to interact with visitors:
+            </p>
+            <dl>
+              <dt><code>alert</code></dt>
+              <dd>shows a message.</dd>
+              <dt><code>prompt</code></dt>
+              <dd>
+                shows a message asking the user to input text. It returns the
+                text or, if Cancel button or Esc is clicked, <code>null</code>.
+              </dd>
+              <dt><code>confirm</code></dt>
+              <dd>
+                shows a message and waits for the user to press “OK” or
+                “Cancel”. It returns <code>true</code> for OK and
+                <code>false</code> for Cancel/<kbd class="shortcut">Esc</kbd>.
+              </dd>
+            </dl>
+            <p>
+              All these methods are modal: they pause script execution and don’t
+              allow the visitor to interact with the rest of the page until the
+              window has been dismissed.
+            </p>
+            <p>There are two limitations shared by all the methods above:</p>
+            <ol>
+              <li>
+                The exact location of the modal window is determined by the
+                browser. Usually, it’s in the center.
+              </li>
+              <li>
+                The exact look of the window also depends on the browser. We
+                can’t modify it.
+              </li>
+            </ol>
+            <p>
+              That is the price for simplicity. There are other ways to show
+              nicer windows and richer interaction with the visitor, but if
+              “bells and whistles” do not matter much, these methods work just
+              fine.
+            </p>
+            <a
+              href="https://javascript.info/alert-prompt-confirm"
+              target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+          <div class="spacer"></div>
+          <details>
+            <summary>Type Conversions</summary>
+            <p>
+              The three most widely used type conversions are to string, to
+              number, and to boolean.
+            </p>
+            <p>
+              <strong><code>String Conversion</code></strong> – Occurs when we
+              output something. Can be performed with
+              <code>String(value)</code>. The conversion to string is usually
+              obvious for primitive values.
+            </p>
+            <p>
+              <strong><code>Numeric Conversion</code></strong> – Occurs in math
+              operations. Can be performed with <code>Number(value)</code>.
+            </p>
+            <p>The conversion follows the rules:</p>
+            <table class="TFtable">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Becomes…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>undefined</code></td>
+                  <td><code>NaN</code></td>
+                </tr>
+                <tr>
+                  <td><code>null</code></td>
+                  <td><code>0</code></td>
+                </tr>
+                <tr>
+                  <td><code>true&nbsp;/&nbsp;false</code></td>
+                  <td><code>1 / 0</code></td>
+                </tr>
+                <tr>
+                  <td><code>string</code></td>
+                  <td>
+                    The string is read “as is”, whitespaces (includes spaces,
+                    tabs <code>\t</code>, newlines <code>\n</code> etc.) from
+                    both sides are ignored. An empty string becomes
+                    <code>0</code>. An error gives <code>NaN</code>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <strong><code>Boolean Conversion</code></strong> – Occurs in
+              logical operations. Can be performed with
+              <code>Boolean(value)</code>.
+            </p>
+            <p>Follows the rules:</p>
+            <table class="TFtable">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th>Becomes…</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <code>0</code>, <code>null</code>, <code>undefined</code>,
+                    <code>NaN</code>, <code>""</code>
+                  </td>
+                  <td><code>false</code></td>
+                </tr>
+                <tr>
+                  <td>any other value</td>
+                  <td><code>true</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Most of these rules are easy to understand and memorize. The
+              notable exceptions where people usually make mistakes are:
+            </p>
+            <ul>
+              <li>
+                <code>undefined</code> is <code>NaN</code> as a number, not
+                <code>0</code>.
+              </li>
+              <li>
+                <code>"0"</code> and space-only strings like
+                <code>" "</code> are true as a boolean.
+              </li>
+            </ul>
+            <a href="https://javascript.info/type-conversions" target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+          <details>
+            <summary>Basic operators, maths</summary>
+            <strong class="notAvailable">N/A</strong> <br />
+            <a href="https://javascript.info/operators">Full</a>
+            <hr />
+          </details>
+          <details>
+            <summary>Comparisons</summary>
+            <ul>
+              <li>Comparison operators return a boolean value.</li>
+              <li>
+                Strings are compared letter-by-letter in the “dictionary” order.
+              </li>
+              <li>
+                When values of different types are compared, they get converted
+                to numbers (with the exclusion of a strict equality check).
+              </li>
+              <li>
+                The values <code>null</code> and <code>undefined</code> equal
+                <code>==</code> each other and do not equal any other value.
+              </li>
+              <li>
+                Be careful when using comparisons like <code>&gt;</code> or
+                <code>&lt;</code> with variables that can occasionally be
+                <code>null/undefined</code>. Checking for
+                <code>null/undefined</code> separately is a good idea.
+              </li>
+            </ul>
+            <a href="https://javascript.info/comparison" target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+          <details>
+            <summary>Conditional branching: if, '?'</summary>
+            <strong class="notAvailable">N/A</strong> <br />
+            <a href="https://javascript.info/ifelse" target="_blank">Full</a>
+            <hr />
+          </details>
+          <details>
+            <summary>Logical operators</summary>
+            <strong class="notAvailable">N/A</strong> <br />
+            <a href="https://javascript.info/logical-operators" target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+          <details>
+            <summary>Nullish coalescing operator '??'</summary>
+            <ul>
+              <li>
+                The nullish coalescing operator <code>??</code> provides a short
+                way to choose the first “defined” value from a list.
+              </li>
+              <p>It’s used to assign default values to variables:</p>
+            </ul>
+            <img
+              src="Code101.png"
+              alt="Example of the code"
+              width="100%"
+              height="75px"
+            />
+            <ul>
+              <li>
+                The operator <code>??</code> has a very low precedence, only a
+                bit higher than <code>?</code> and <code>=</code>, so consider
+                adding parentheses when using it in an expression.
+              </li>
+              <li>
+                It’s forbidden to use it with <code>||</code> or
+                <code>&amp;&amp;</code> without explicit parentheses.
+              </li>
+            </ul>
+            <a href="https://javascript.info/logical-operators" target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+          <div class="spacer"></div>
+          <details>
+            <summary>Loops: while and for</summary>
+            <p>We covered 3 types of loops:</p>
+            <ul>
+              <li>
+                <code>while</code> – The condition is checked before each
+                iteration.
+              </li>
+              <li>
+                <code>do..while</code> – The condition is checked after each
+                iteration.
+              </li>
+              <li>
+                <code>for (;;)</code> – The condition is checked before each
+                iteration, additional settings available.
+              </li>
+            </ul>
+            <p>
+              To make an “infinite” loop, usually the
+              <code>while(true)</code> construct is used. Such a loop, just like
+              any other, can be stopped with the <code>break</code> directive.
+            </p>
+            <p>
+              If we don’t want to do anything in the current iteration and would
+              like to forward to the next one, we can use the
+              <code>continue</code> directive.
+            </p>
+            <p>
+              <code>break/continue</code> support labels before the loop. A
+              label is the only way for <code>break/continue</code> to escape a
+              nested loop to go to an outer one.
+            </p>
+            <a href="https://javascript.info/while-for" target="_blank">Full</a>
+            <hr />
+          </details>
+          <details>
+            <summary>The "switch" statement</summary>
+            <strong class="notAvailable">N/A</strong> <br />
+            <a href="https://javascript.info/switch" target="_blank">Full</a>
+            <hr />
+          </details>
+          <details>
+            <summary>Functions</summary>
+            <p>A function declaration looks like this:</p>
+            <img
+              src="Code141.png"
+              alt="Example of the code"
+              width="100%"
+              height="105px"
+            />
+            <ul>
+              <li>
+                Values passed to a function as parameters are copied to its
+                local variables.
+              </li>
+              <li>
+                A function may access outer variables. But it works only from
+                inside out. The code outside of the function doesn’t see its
+                local variables.
+              </li>
+              <li>
+                A function can return a value. If it doesn’t, then its result is
+                <code>undefined</code>.
+              </li>
+            </ul>
+            <p>
+              It is always easier to understand a function which gets
+              parameters, works with them and returns a result than a function
+              which gets no parameters, but modifies outer variables as a side
+              effect.
+            </p>
+            <p>Function naming:</p>
+            <ul>
+              <li>
+                A name should clearly describe what the function does. When we
+                see a function call in the code, a good name instantly gives us
+                an understanding what it does and returns.
+              </li>
+              <li>
+                A function is an action, so function names are usually verbal.
+              </li>
+              <li>
+                There exist many well-known function prefixes like
+                <code>create…</code>, <code>show…</code>, <code>get…</code>,
+                <code>check…</code> and so on. Use them to hint what a function
+                does.
+              </li>
+            </ul>
+            <p>
+              Functions are the main building blocks of scripts. Now we’ve
+              covered the basics, so we actually can start creating and using
+              them. But that’s only the beginning of the path. We are going to
+              return to them many times, going more deeply into their advanced
+              features.
+            </p>
+            <a href="https://javascript.info/function-basics" target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+          <details>
+            <summary>Function Expression</summary>
+            <ul>
+              <li>
+                Functions are values. They can be assigned, copied or declared
+                in any place of the code.
+              </li>
+              <li>
+                If the function is declared as a separate statement in the main
+                code flow, that’s called a “Function Declaration”.
+              </li>
+              <li>
+                If the function is created as a part of an expression, it’s
+                called a “Function Expression”.
+              </li>
+              <li>
+                Function Declarations are processed before the code block is
+                executed. They are visible everywhere in the block.
+              </li>
+              <li>
+                Function Expressions are created when the execution flow reaches
+                them.
+              </li>
+            </ul>
+            <p>
+              In most cases when we need to declare a function, a Function
+              Declaration is preferable, because it is visible prior to the
+              declaration itself. That gives us more flexibility in code
+              organization, and is usually more readable.
+            </p>
+            <p>
+              So we should use a Function Expression only when a Function
+              Declaration is not fit for the task. We’ve seen a couple of
+              examples of that in this chapter, and will see more in the future.
+            </p>
+            <a
+              href="https://javascript.info/function-expressions"
+              target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+          <details>
+            <summary>Arrow functions, the basics</summary>
+            <p>
+              Arrow functions are handy for simple actions, especially for
+              one-liners. They come in two flavors:
+            </p>
+            <ol>
+              <li>
+                Without curly braces: <code>(...args) =&gt; expression</code> –
+                the right side is an expression: the function evaluates it and
+                returns the result. Parentheses can be omitted, if there’s only
+                a single argument, e.g. <code>n =&gt; n*2</code>.
+              </li>
+              <li>
+                With curly braces: <code>(...args) =&gt; { body }</code> –
+                brackets allow us to write multiple statements inside the
+                function, but we need an explicit <code>return</code> to return
+                something.
+              </li>
+            </ol>
+            <a
+              href="https://javascript.info/arrow-functions-basics"
+              target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+          <details>
+            <summary>JavaScript specials</summary>
+            <strong class="notAvailable">N/A</strong> <br />
+            <a
+              href="https://javascript.info/javascript-specials"
+              target="_blank"
+              >Full</a
+            >
+            <hr />
+          </details>
+        </div>
+        <div class="list-item">
+          <div class="list-Title">
+            <h2>Code Quality</h2>
+          </div>
+          <div class="list-Sub">
+            <details>
+              <summary>Debugging in the browser</summary>
+              <p>As we can see, there are three main ways to pause a script:</p>
+              <ol>
+                <li>A breakpoint.</li>
+                <li>The <code>debugger</code> statements.</li>
+                <li>
+                  An error (if dev tools are open and the button
+                  <span
+                    class="devtools"
+                    style="background-position: -90px -146px"
+                  ></span>
+                  is “on”).
+                </li>
+              </ol>
+              <p>
+                When paused, we can debug: examine variables and trace the code
+                to see where the execution goes wrong.
+              </p>
+              <p>
+                There are many more options in developer tools than covered
+                here. The full manual is at
+                <a
+                  href="https://developers.google.com/web/tools/chrome-devtools"
+                  target="_blank"
+                  >https://developers.google.com/web/tools/chrome-devtools</a
+                >.
+              </p>
+              <p>
+                The information from this chapter is enough to begin debugging,
+                but later, especially if you do a lot of browser stuff, please
+                go there and look through more advanced capabilities of
+                developer tools.
+              </p>
+              <p>
+                Oh, and also you can click at various places of dev tools and
+                just see what’s showing up. That’s probably the fastest route to
+                learn dev tools. Don’t forget about the right click and context
+                menus!
+              </p>
+              <a href="https://javascript.info/debugging-chrome" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Coding Style</summary>
+              <p>
+                All syntax rules described in this chapter (and in the style
+                guides referenced) aim to increase the readability of your code.
+                All of them are debatable.
+              </p>
+              <p>
+                When we think about writing “better” code, the questions we
+                should ask ourselves are: “What makes the code more readable and
+                easier to understand?” and “What can help us avoid errors?”
+                These are the main things to keep in mind when choosing and
+                debating code styles.
+              </p>
+              <p>
+                Reading popular style guides will allow you to keep up to date
+                with the latest ideas about code style trends and best
+                practices.
+              </p>
+              <a href="https://javascript.info/coding-style" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Comments</summary>
+              <p>
+                An important sign of a good developer is comments: their
+                presence and even their absence.
+              </p>
+              <p>
+                Good comments allow us to maintain the code well, come back to
+                it after a delay and use it more effectively.
+              </p>
+              <p><strong>Comment this:</strong></p>
+              <ul>
+                <li>Overall architecture, high-level view.</li>
+                <li>Function usage.</li>
+                <li>
+                  Important solutions, especially when not immediately obvious.
+                </li>
+              </ul>
+              <p><strong>Avoid comments:</strong></p>
+              <ul>
+                <li>That tell “how code works” and “what it does”.</li>
+                <li>
+                  Put them in only if it’s impossible to make the code so simple
+                  and self-descriptive that it doesn’t require them.
+                </li>
+              </ul>
+              <p>
+                Comments are also used for auto-documenting tools like JSDoc3:
+                they read them and generate HTML-docs (or docs in another
+                format).
+              </p>
+              <a href="https://javascript.info/comments" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Ninja Code</summary>
+              <strong class="notAvailable">:D</strong>
+              <br />
+              <a href="https://javascript.info/ninja-code" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Automated testing with Mocha</summary>
+              <p>
+                In BDD, the spec goes first, followed by implementation. At the
+                end we have both the spec and the code.
+              </p>
+              <p>The spec can be used in three ways:</p>
+              <ol>
+                <li>
+                  As <strong>Tests</strong> – they guarantee that the code works
+                  correctly.
+                </li>
+                <li>
+                  As <strong>Docs</strong> – the titles of
+                  <code>describe</code> and <code>it</code> tell what the
+                  function does.
+                </li>
+                <li>
+                  As <strong>Examples</strong> – the tests are actually working
+                  examples showing how a function can be used.
+                </li>
+              </ol>
+              <p>
+                With the spec, we can safely improve, change, even rewrite the
+                function from scratch and make sure it still works right.
+              </p>
+              <p>
+                That’s especially important in large projects when a function is
+                used in many places. When we change such a function, there’s
+                just no way to manually check if every place that uses it still
+                works right.
+              </p>
+              <p>Without tests, people have two ways:</p>
+              <ol>
+                <li>
+                  To perform the change, no matter what. And then our users meet
+                  bugs, as we probably fail to check something manually.
+                </li>
+                <li>
+                  Or, if the punishment for errors is harsh, as there are no
+                  tests, people become afraid to modify such functions, and then
+                  the code becomes outdated, no one wants to get into it. Not
+                  good for development.
+                </li>
+              </ol>
+              <p>
+                <strong
+                  >Automatic testing helps to avoid these problems!</strong
+                >
+              </p>
+              <p>
+                If the project is covered with tests, there’s just no such
+                problem. After any changes, we can run tests and see a lot of
+                checks made in a matter of seconds.
+              </p>
+              <p>
+                <strong
+                  >Besides, a well-tested code has better architecture.</strong
+                >
+              </p>
+              <p>
+                Naturally, that’s because auto-tested code is easier to modify
+                and improve. But there’s also another reason.
+              </p>
+              <p>
+                To write tests, the code should be organized in such a way that
+                every function has a clearly described task, well-defined input
+                and output. That means a good architecture from the beginning.
+              </p>
+              <p>
+                In real life that’s sometimes not that easy. Sometimes it’s
+                difficult to write a spec before the actual code, because it’s
+                not yet clear how it should behave. But in general writing tests
+                makes development faster and more stable.
+              </p>
+              <p>
+                Later in the tutorial you will meet many tasks with tests
+                baked-in. So you’ll see more practical examples.
+              </p>
+              <p>
+                Writing tests requires good JavaScript knowledge. But we’re just
+                starting to learn it. So, to settle down everything, as of now
+                you’re not required to write tests, but you should already be
+                able to read them even if they are a little bit more complex
+                than in this chapter.
+              </p>
+              <a href="https://javascript.info/testing-mocha" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Polyfills and transpilers</summary>
+              <p>
+                In this chapter we’d like to motivate you to study modern and
+                even “bleeding-edge” language features, even if they aren’t yet
+                well-supported by JavaScript engines.
+              </p>
+              <p>
+                Just don’t forget to use a transpiler (if using modern syntax or
+                operators) and polyfills (to add functions that may be missing).
+                They’ll ensure that the code works.
+              </p>
+              <p>
+                For example, later when you’re familiar with JavaScript, you can
+                setup a code build system based on
+                <a href="https://webpack.js.org/">webpack</a> with the
+                <a href="https://github.com/babel/babel-loader">babel-loader</a>
+                plugin.
+              </p>
+              <p>
+                Good resources that show the current state of support for
+                various features:
+              </p>
+              <ul>
+                <li>
+                  <a href="https://compat-table.github.io/compat-table/es6/"
+                    >https://compat-table.github.io/compat-table/es6/</a
+                  >
+                  – for pure JavaScript.
+                </li>
+                <li>
+                  <a href="https://caniuse.com/">https://caniuse.com/</a> – for
+                  browser-related functions.
+                </li>
+              </ul>
+              <p>
+                P.S. Google Chrome is usually the most up-to-date with language
+                features, try it if a tutorial demo fails. Most tutorial demos
+                work with any modern browser though.
+              </p>
+              <a href="https://javascript.info/polyfills" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+          </div>
+        </div>
+        <div class="list-Item">
+          <div class="list-Title">
+            <h2>Objects: the basics</h2>
+          </div>
+          <div class="list-Sub">
+            <details>
+              <summary>Objects</summary>
+              <p>
+                Objects are associative arrays with several special features.
+              </p>
+              <p>They store properties (key-value pairs), where:</p>
+              <ul>
+                <li>
+                  Property keys must be strings or symbols (usually strings).
+                </li>
+                <li>Values can be of any type.</li>
+              </ul>
+              <p>To access a property, we can use:</p>
+              <ul>
+                <li>The dot notation: <code>obj.property</code>.</li>
+                <li>
+                  Square brackets notation <code>obj["property"]</code>. Square
+                  brackets allow taking the key from a variable, like
+                  <code>obj[varWithKey]</code>.
+                </li>
+              </ul>
+              <p>Additional operators:</p>
+              <ul>
+                <li>To delete a property: <code>delete obj.prop</code>.</li>
+                <li>
+                  To check if a property with the given key exists:
+                  <code>"key" in obj</code>.
+                </li>
+                <li>
+                  To iterate over an object:
+                  <code>for (let key in obj)</code> loop.
+                </li>
+              </ul>
+              <p>
+                What we’ve studied in this chapter is called a “plain object”,
+                or just <code>Object</code>.
+              </p>
+              <p>There are many other kinds of objects in JavaScript:</p>
+              <ul>
+                <li><code>Array</code> to store ordered data collections,</li>
+                <li>
+                  <code>Date</code> to store the information about the date and
+                  time,
+                </li>
+                <li>
+                  <code>Error</code> to store the information about an error.
+                </li>
+                <li>…And so on.</li>
+              </ul>
+              <p>
+                They have their special features that we’ll study later.
+                Sometimes people say something like “Array type” or “Date type”,
+                but formally they are not types of their own, but belong to a
+                single “object” data type. And they extend it in various ways.
+              </p>
+              <p>
+                Objects in JavaScript are very powerful. Here we’ve just
+                scratched the surface of a topic that is really huge. We’ll be
+                closely working with objects and learning more about them in
+                further parts of the tutorial.
+              </p>
+              <a href="https://javascript.info/object" target="_blank">Full</a>
+              <hr />
+            </details>
+            <details>
+              <summary>Object references and copying</summary>
+              <p>
+                Objects are assigned and copied by reference. In other words, a
+                variable stores not the “object value”, but a “reference”
+                (address in memory) for the value. So copying such a variable or
+                passing it as a function argument copies that reference, not the
+                object itself.
+              </p>
+              <p>
+                All operations via copied references (like adding/removing
+                properties) are performed on the same single object.
+              </p>
+              <p>
+                To make a “real copy” (a clone) we can use
+                <code>Object.assign</code> for the so-called “shallow copy”
+                (nested objects are copied by reference) or a “deep cloning”
+                function <code>structuredClone</code> or use a custom cloning
+                implementation, such as
+                <a href="https://lodash.com/docs#cloneDeep" target="_blank"
+                  >_.cloneDeep(obj)</a
+                >.
+              </p>
+              <a href="https://javascript.info/object-copy" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Garbage collection</summary>
+              <p>The main things to know:</p>
+              <ul>
+                <li>
+                  Garbage collection is performed automatically. We cannot force
+                  or prevent it.
+                </li>
+                <li>
+                  Objects are retained in memory while they are reachable.
+                </li>
+                <li>
+                  Being referenced is not the same as being reachable (from a
+                  root): a pack of interlinked objects can become unreachable as
+                  a whole, as we’ve seen in the example above.
+                </li>
+              </ul>
+              <p>
+                Modern engines implement advanced algorithms of garbage
+                collection.
+              </p>
+              <p>
+                A general book “The Garbage Collection Handbook: The Art of
+                Automatic Memory Management” (R. Jones et al) covers some of
+                them.
+              </p>
+              <p>
+                If you are familiar with low-level programming, more detailed
+                information about V8’s garbage collector is in the article
+                <a
+                  href="https://jayconrod.com/posts/55/a-tour-of-v8-garbage-collection"
+                  >A tour of V8: Garbage Collection</a
+                >.
+              </p>
+              <p>
+                The <a href="https://v8.dev/">V8 blog</a> also publishes
+                articles about changes in memory management from time to time.
+                Naturally, to learn more about garbage collection, you’d better
+                prepare by learning about V8 internals in general and read the
+                blog of <a href="https://mrale.ph">Vyacheslav Egorov</a> who
+                worked as one of the V8 engineers. I’m saying: “V8”, because it
+                is best covered by articles on the internet. For other engines,
+                many approaches are similar, but garbage collection differs in
+                many aspects.
+              </p>
+              <p>
+                In-depth knowledge of engines is good when you need low-level
+                optimizations. It would be wise to plan that as the next step
+                after you’re familiar with the language.
+              </p>
+              <a
+                href="https://javascript.info/garbage-collection"
+                target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Object methods, "this"</summary>
+              <ul>
+                <li>
+                  Functions that are stored in object properties are called
+                  “methods”.
+                </li>
+                <li>
+                  Methods allow objects to “act” like
+                  <code>object.doSomething()</code>.
+                </li>
+                <li>Methods can reference the object as <code>this</code>.</li>
+              </ul>
+              <p>The value of <code>this</code> is defined at run-time.</p>
+              <ul>
+                <li>
+                  When a function is declared, it may use <code>this</code>, but
+                  that <code>this</code> has no value until the function is
+                  called.
+                </li>
+                <li>A function can be copied between objects.</li>
+                <li>
+                  When a function is called in the “method” syntax:
+                  <code>object.method()</code>, the value of
+                  <code>this</code> during the call is <code>object</code>.
+                </li>
+              </ul>
+              <p>
+                Please note that arrow functions are special: they have no
+                <code>this</code>. When <code>this</code> is accessed inside an
+                arrow function, it is taken from outside.
+              </p>
+              <a href="https://javascript.info/object-methods" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Constructor, operator "new"</summary>
+              <ul>
+                <li>
+                  Constructor functions or, briefly, constructors, are regular
+                  functions, but there’s a common agreement to name them with
+                  capital letter first.
+                </li>
+                <li>
+                  Constructor functions should only be called using
+                  <code>new</code>. Such a call implies a creation of empty
+                  <code>this</code> at the start and returning the populated one
+                  at the end.
+                </li>
+              </ul>
+              <p>
+                We can use constructor functions to make multiple similar
+                objects.
+              </p>
+              <p>
+                JavaScript provides constructor functions for many built-in
+                language objects: like <code>Date</code> for dates,
+                <code>Set</code> for sets and others that we plan to study.
+              </p>
+              <a href="https://javascript.info/constructor-new" target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Optional chaining '?.'</summary>
+              <p>
+                The optional chaining <code>?.</code> syntax has three forms:
+              </p>
+              <ol>
+                <li>
+                  <code>obj?.prop</code> – returns <code>obj.prop</code> if
+                  <code>obj</code> exists, otherwise <code>undefined</code>.
+                </li>
+                <li>
+                  <code>obj?.[prop]</code> – returns <code>obj[prop]</code> if
+                  <code>obj</code> exists, otherwise <code>undefined</code>.
+                </li>
+                <li>
+                  <code>obj.method?.()</code> – calls
+                  <code>obj.method()</code> if <code>obj.method</code> exists,
+                  otherwise returns <code>undefined</code>.
+                </li>
+              </ol>
+              <p>
+                As we can see, all of them are straightforward and simple to
+                use. The <code>?.</code> checks the left part for
+                <code>null/undefined</code> and allows the evaluation to proceed
+                if it’s not so.
+              </p>
+              <p>
+                A chain of <code>?.</code> allows to safely access nested
+                properties.
+              </p>
+              <p>
+                Still, we should apply <code>?.</code> carefully, only where
+                it’s acceptable, according to our code logic, that the left part
+                doesn’t exist. So that it won’t hide programming errors from us,
+                if they occur.
+              </p>
+              <a
+                href="https://javascript.info/optional-chaining"
+                target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Symbol type</summary>
+              <p>
+                <code>Symbol</code> is a primitive type for unique identifiers.
+              </p>
+              <p>
+                Symbols are created with <code>Symbol()</code> call with an
+                optional description (name).
+              </p>
+              <p>
+                Symbols are always different values, even if they have the same
+                name. If we want same-named symbols to be equal, then we should
+                use the global registry: <code>Symbol.for(key)</code> returns
+                (creates if needed) a global symbol with <code>key</code> as the
+                name. Multiple calls of <code>Symbol.for</code> with the same
+                <code>key</code> return exactly the same symbol.
+              </p>
+              <p>Symbols have two main use cases:</p>
+              <ol>
+                <li>
+                  <p>“Hidden” object properties.</p>
+                  <p>
+                    If we want to add a property into an object that “belongs”
+                    to another script or a library, we can create a symbol and
+                    use it as a property key. A symbolic property does not
+                    appear in <code>for..in</code>, so it won’t be accidentally
+                    processed together with other properties. Also it won’t be
+                    accessed directly, because another script does not have our
+                    symbol. So the property will be protected from accidental
+                    use or overwrite.
+                  </p>
+                  <p>
+                    So we can “covertly” hide something into objects that we
+                    need, but others should not see, using symbolic properties.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    There are many system symbols used by JavaScript which are
+                    accessible as <code>Symbol.*</code>. We can use them to
+                    alter some built-in behaviors. For instance, later in the
+                    tutorial we’ll use <code>Symbol.iterator</code> for
+                    <a href="/iterable">iterables</a>,
+                    <code>Symbol.toPrimitive</code> to setup
+                    <a href="/object-toprimitive"
+                      >object-to-primitive conversion</a
+                    >
+                    and so on.
+                  </p>
+                </li>
+              </ol>
+              <p>
+                Technically, symbols are not 100% hidden. There is a built-in
+                method
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols"
+                  >Object.getOwnPropertySymbols(obj)</a
+                >
+                that allows us to get all symbols. Also there is a method named
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys"
+                  >Reflect.ownKeys(obj)</a
+                >
+                that returns <em>all</em> keys of an object including symbolic
+                ones. But most libraries, built-in functions and syntax
+                constructs don’t use these methods.
+              </p>
+              <a href="https://javascript.info/symbol" target="_blank">Full</a>
+              <hr />
+            </details>
+            <details>
+              <summary>Object to primitive conversion</summary>
+              <p>
+                The object-to-primitive conversion is called automatically by
+                many built-in functions and operators that expect a primitive as
+                a value.
+              </p>
+              <p>There are 3 types (hints) of it:</p>
+              <ul>
+                <li>
+                  <code>"string"</code> (for <code>alert</code> and other
+                  operations that need a string)
+                </li>
+                <li><code>"number"</code> (for maths)</li>
+                <li>
+                  <code>"default"</code> (few operators, usually objects
+                  implement it the same way as <code>"number"</code>)
+                </li>
+              </ul>
+              <p>
+                The specification describes explicitly which operator uses which
+                hint.
+              </p>
+              <p>The conversion algorithm is:</p>
+              <ol>
+                <li>
+                  Call <code>obj[Symbol.toPrimitive](hint)</code> if the method
+                  exists,
+                </li>
+                <li>
+                  Otherwise if hint is <code>"string"</code>
+                  <ul>
+                    <li>
+                      try calling <code>obj.toString()</code> or
+                      <code>obj.valueOf()</code>, whatever exists.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Otherwise if hint is <code>"number"</code> or
+                  <code>"default"</code>
+                  <ul>
+                    <li>
+                      try calling <code>obj.valueOf()</code> or
+                      <code>obj.toString()</code>, whatever exists.
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+              <p>
+                All these methods must return a primitive to work (if defined).
+              </p>
+              <p>
+                In practice, it’s often enough to implement only
+                <code>obj.toString()</code> as a “catch-all” method for string
+                conversions that should return a “human-readable” representation
+                of an object, for logging or debugging purposes.
+              </p>
+              <a
+                href="https://javascript.info/object-toprimitive"
+                target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+          </div>
+        </div>
+      </div>
+      <!-- end of list -->
+    </div>
+    <!-- end of content -->
+    <!-- !Important Javascript -->
+    <script>
+      "use strict";
+      function myContact() {
+        alert(
+          "Contact no. (+63) 995 028 9948 \nEmail address: Yuansabellina@gmail.com \nGithub: @KuyaYow"
+        );
+      }
+      function about() {
+        alert(
+          "This is a website that features summaries from the book 'Javascript.info'"
+        );
+      }
+    </script>
+  </body>
+</html>
