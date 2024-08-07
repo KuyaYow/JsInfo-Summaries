@@ -1,0 +1,16 @@
+{
+  "name": "jsinfosmryfilesspa",
+  "version": "1.0.0",
+  "description": "!Unfinished!\r <br>\r Minimum width 307px\r <br>\r This is a webpage that I made so I can easily find just the summarized part of a topic in Javascript.Info if ever I need to.\r <br>\r Currently, the search button has no function yet. (Basically it doesn't work for now. Though in the future I will make a function for it.)<br>\r This is public so anyone can use this but please credit me and also the creator of Javascript.Info\r <br>\r Thank you!\r <hr>\r Credits to Ilya Kantor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
