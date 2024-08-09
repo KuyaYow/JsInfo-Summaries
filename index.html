@@ -1691,6 +1691,202 @@
             </details>
           </div>
         </div>
+        <div class="list-Item">
+          <div class="list-Title">
+            <h2>Data Types</h2>
+          </div>
+          <div class="list-sub">
+            <details>
+              <summary>Methods of primitives</summary>
+              <ul>
+                <li>
+                  Primitives except <code>null</code> and
+                  <code>undefined</code> provide many helpful methods. We will
+                  study those in the upcoming chapters.
+                </li>
+                <li>
+                  Formally, these methods work via temporary objects, but
+                  JavaScript engines are well tuned to optimize that internally,
+                  so they are not expensive to call.
+                </li>
+              </ul>
+              <a
+                href="https://javascript.info/primitives-methods"
+                target="_blank"
+                >Full</a
+              >
+              <hr />
+            </details>
+            <details>
+              <summary>Numbers</summary>
+              <p>To write numbers with many zeroes:</p>
+              <ul>
+                <li>
+                  Append <code>"e"</code> with the zeroes count to the number.
+                  Like: <code>123e6</code> is the same as <code>123</code> with
+                  6 zeroes <code>123000000</code>.
+                </li>
+                <li>
+                  A negative number after <code>"e"</code> causes the number to
+                  be divided by 1 with given zeroes. E.g.
+                  <code>123e-6</code> means <code>0.000123</code> (<code
+                    >123</code
+                  >
+                  millionths).
+                </li>
+              </ul>
+              <p>For different numeral systems:</p>
+              <ul>
+                <li>
+                  Can write numbers directly in hex (<code>0x</code>), octal
+                  (<code>0o</code>) and binary (<code>0b</code>) systems.
+                </li>
+                <li>
+                  <code>parseInt(str, base)</code> parses the string
+                  <code>str</code> into an integer in numeral system with given
+                  <code>base</code>, <code>2 ≤ base ≤ 36</code>.
+                </li>
+                <li>
+                  <code>num.toString(base)</code> converts a number to a string
+                  in the numeral system with the given <code>base</code>.
+                </li>
+              </ul>
+              <p>For regular number tests:</p>
+              <ul>
+                <li>
+                  <code>isNaN(value)</code> converts its argument to a number
+                  and then tests it for being <code>NaN</code>
+                </li>
+                <li>
+                  <code>Number.isNaN(value)</code> checks whether its argument
+                  belongs to the <code>number</code> type, and if so, tests it
+                  for being <code>NaN</code>
+                </li>
+                <li>
+                  <code>isFinite(value)</code> converts its argument to a number
+                  and then tests it for not being
+                  <code>NaN/Infinity/-Infinity</code>
+                </li>
+                <li>
+                  <code>Number.isFinite(value)</code> checks whether its
+                  argument belongs to the <code>number</code> type, and if so,
+                  tests it for not being <code>NaN/Infinity/-Infinity</code>
+                </li>
+              </ul>
+              <p>
+                For converting values like <code>12pt</code> and
+                <code>100px</code> to a number:
+              </p>
+              <ul>
+                <li>
+                  Use <code>parseInt/parseFloat</code> for the “soft”
+                  conversion, which reads a number from a string and then
+                  returns the value they could read before the error.
+                </li>
+              </ul>
+              <p>For fractions:</p>
+              <ul>
+                <li>
+                  Round using <code>Math.floor</code>, <code>Math.ceil</code>,
+                  <code>Math.trunc</code>, <code>Math.round</code> or
+                  <code>num.toFixed(precision)</code>.
+                </li>
+                <li>
+                  Make sure to remember there’s a loss of precision when working
+                  with fractions.
+                </li>
+              </ul>
+              <p>More mathematical functions:</p>
+              <ul>
+                <li>
+                  See the
+                  <a
+                    href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math"
+                    target="_blank"
+                    >Math</a
+                  >
+                  object when you need them. The library is very small but can
+                  cover basic needs.
+                </li>
+              </ul>
+              <a href="https://javascript.info/number" target="_blank">Full</a>
+              <hr />
+            </details>
+            <details>
+              <summary>Strings</summary>
+              <ul>
+                <li>
+                  There are 3 types of quotes. Backticks allow a string to span
+                  multiple lines and embed expressions <code>${…}</code>.
+                </li>
+                <li>
+                  We can use special characters, such as a line break
+                  <code>\n</code>.
+                </li>
+                <li>
+                  To get a character, use: <code>[]</code> or
+                  <code>at</code> method.
+                </li>
+                <li>
+                  To get a substring, use: <code>slice</code> or
+                  <code>substring</code>.
+                </li>
+                <li>
+                  To lowercase/uppercase a string, use:
+                  <code>toLowerCase/toUpperCase</code>.
+                </li>
+                <li>
+                  To look for a substring, use: <code>indexOf</code>, or
+                  <code>includes/startsWith/endsWith</code> for simple checks.
+                </li>
+                <li>
+                  To compare strings according to the language, use:
+                  <code>localeCompare</code>, otherwise they are compared by
+                  character codes.
+                </li>
+              </ul>
+              <p>There are several other helpful methods in strings:</p>
+              <ul>
+                <li>
+                  <code>str.trim()</code> – removes (“trims”) spaces from the
+                  beginning and end of the string.
+                </li>
+                <li>
+                  <code>str.repeat(n)</code> – repeats the string
+                  <code>n</code> times.
+                </li>
+                <li>
+                  …and more to be found in the
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+                    target="_blank"
+                    >manual</a
+                  >.
+                </li>
+              </ul>
+              <p>
+                Strings also have methods for doing search/replace with regular
+                expressions. But that’s big topic, so it’s explained in a
+                separate tutorial section
+                <a
+                  href="https://javascript.info/regular-expressions"
+                  target="_blank"
+                  >Regular expressions</a
+                >.
+              </p>
+              <p>
+                Also, as of now it’s important to know that strings are based on
+                Unicode encoding, and hence there’re issues with comparisons.
+                There’s more about Unicode in the chapter
+                <a href="https://javascript.info/unicode" target="_blank"
+                  >Unicode, String internals</a
+                >.
+              </p>
+              <a href="https://javascript.info/string" target="_blank">Full</a>
+              <hr />
+            </details>
+          </div>
+        </div>
       </div>
       <!-- end of list -->
     </div>
