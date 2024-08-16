@@ -10,7 +10,7 @@ Currently, the search button has no function yet. (Basically it doesn't work for
 For some reason it's very buggy on iPhones. (I did tests on both Android and iPhone and it's just very buggy on iPhones but I'll try to fix it in the future.)<br>
 This is public so anyone can use this but please credit me and also the creator of Javascript.Info
 <br>
-Thank you!
+Thank you! <p>:)<p>
 
 <hr>
 Credits to Ilya Kantor
