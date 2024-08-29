@@ -10,6 +10,25 @@
     <!-- !Important Javascript -->
     <script>
       "use strict";
+      let userName = prompt("Who are you?", "");
+      if (userName === "KuyaYow") {
+        let pass = prompt("Enter PIN", "");
+        if (pass === "*****") {
+          alert("Welcome Back!" + userName);
+        } else if (pass === "" || pass === "null") {
+          alert("Cancelled");
+          window.location.href = "https://google.com";
+        } else {
+          alert("Invalid PIN");
+          window.location.href = "https://google.com";
+        }
+      } else if (userName === "" || userName === null) {
+        alert("Cancelled");
+        window.location.href = "https://google.com";
+      } else {
+        alert("Invalid Username");
+        window.location.href = "https://google.com";
+      }
       function myContact() {
         alert(
           "Contact no. (+63) 995 028 9948 \nEmail address: Yuansabellina@gmail.com \nGithub: @KuyaYow"
