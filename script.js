@@ -6,7 +6,7 @@ function handleLogin() {
   if (userName === "KuyaYow") {
     let pass = prompt("Enter PIN", "");
     if (pass === "*****") {
-      alert("Welcome Back! " + userName);
+      alert("Welcome Back, " + userName + "!");
       sessionStorage.setItem("loggedIn", "true"); // Set login status in session storage
     } else if (pass === "" || pass === "null") {
       alert("Cancelled");
