@@ -3,7 +3,7 @@
 // Function to handle login process
 function handleLogin() {
   let userName = prompt("Who are you?", "");
-  if (userName === "KuyaYow") {
+  if (userName === "Kuya Yow") {
     let pass = prompt("Enter PIN", "");
     if (pass === "*****") {
       alert("Welcome Back, " + userName + "!");
