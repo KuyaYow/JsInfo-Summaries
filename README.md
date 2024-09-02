@@ -1,8 +1,9 @@
 # JsInfoSummaries.github.io
 
-!Unfinished!
+*Unfinished and ongoing changes
 <br>
-Minimum width 307px
+*Minimum width 307px
+<br>
 <br>
 This is a webpage I made to provide the summarized information on various topics from JavaScript.info for quick reference.
 <br>
