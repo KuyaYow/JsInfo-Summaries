@@ -12,4 +12,4 @@ Currently, the search button has no function yet. <br> (Basically it doesn't wor
 For some reason it's very buggy on iPhones. <br> (I did tests on both Android and iPhone and it's just very buggy on iPhones but I'll try to fix it in the future.)<br>
 
 <hr>
-Credits to Ilya Kantor
+Content and summaries are based on JavaScript.info, created by Ilya Kantor. For the original material and more in-depth tutorials, visit [JavaScript.info](https://Javascript.Info).
