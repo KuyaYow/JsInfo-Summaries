@@ -4,6 +4,8 @@
 <br>
 *Minimum width is 307px
 <br>
+(It's been some time since I've made some changes but I'm back.)
+<br>
 <br>
 This is a webpage I made to provide the summarized information on various topics from JavaScript.info for quick reference.
 <br>
